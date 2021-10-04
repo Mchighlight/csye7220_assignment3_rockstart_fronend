@@ -21,21 +21,13 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import DashboardIcon from '@material-ui/icons/Dashboard';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import LayersIcon from '@material-ui/icons/Layers';
 
 // import your components:
 import Home from "../pages/Home";
-import About from "../pages/About/About";
-import Chart from "../pages/Chart/Chart";
-import Deposits from "../pages/Deposits/Deposits";
-import Orders from "../pages/Orders/Orders";
-import Store from "../pages/Store/Store";
-import Song from "../pages/Song/Song";
+import Stronger from "../pages/Song/stronger";
+import BonitaAppleBum from "../pages/Song/bonitaApplebum";
+import DayAndNight from "../pages/Song/dayAndNight";
 
 const drawerWidth = 240;
 const history = createBrowserHistory();
@@ -223,73 +215,13 @@ export default function Dashboard() {
           {/* Left pane menu items */}
           <List>
 
-            {/* Charts menu item*/}
-            <ListItem button component={Link} to="/charts" onClick={onItemClick('Charts')}>
+            {/* Song menu item */}
+            <ListItem button component={Link} to="/stronger" onClick={onItemClick('Stronger')}>
               <ListItemIcon>
-                <BarChartIcon />
+                <MusicNoteIcon />
               </ListItemIcon>
-              <ListItemText primary="Charts" />
-              { title === 'Charts' && 
-                <ListItemIcon>
-                  <IconButton onClick={handleDrawerCollapsed}>
-                    <ChevronLeftIcon />
-                  </IconButton>
-                </ListItemIcon>
-              }
-            </ListItem>
-
-            {/* Deposits menu item*/}
-            <ListItem button component={Link} to="/deposits" onClick={onItemClick('Deposits')}>
-              <ListItemIcon>
-                <LayersIcon />
-              </ListItemIcon>
-              <ListItemText primary="Deposits" />
-              { title === 'Deposits' && 
-                <ListItemIcon>
-                  <IconButton onClick={handleDrawerCollapsed}>
-                    <ChevronLeftIcon />
-                  </IconButton>
-                </ListItemIcon>
-              }
-            </ListItem>
-
-            {/* Orders menu item */}
-            <ListItem button component={Link} to="/orders" onClick={onItemClick('Orders')}>
-              <ListItemIcon>
-                <PeopleIcon />
-              </ListItemIcon>
-              <ListItemText primary="Orders" />
-              { title === 'Orders' && 
-                <ListItemIcon>
-                  <IconButton onClick={handleDrawerCollapsed} visible={title}>
-                    <ChevronLeftIcon />
-                  </IconButton>
-                </ListItemIcon>
-              }
-            </ListItem>
-
-            {/* Store menu item */}
-            <ListItem button component={Link} to="/store" onClick={onItemClick('Store')}>
-              <ListItemIcon>
-                <ShoppingCartIcon />
-              </ListItemIcon>
-              <ListItemText primary="Store" />
-              { title === 'Store' && 
-                <ListItemIcon>
-                  <IconButton onClick={handleDrawerCollapsed} visible={title}>
-                    <ChevronLeftIcon />
-                  </IconButton>
-                </ListItemIcon>
-              }
-            </ListItem>
-
-            {/* About menu item */}
-            <ListItem button component={Link} to="/about" onClick={onItemClick('About')}>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="About" />
-              { title === 'About' && 
+              <ListItemText primary="Stronger" />
+              { title === 'Stronger' && 
                 <ListItemIcon>
                   <IconButton onClick={handleDrawerCollapsed}>
                     <ChevronLeftIcon />
@@ -299,12 +231,27 @@ export default function Dashboard() {
             </ListItem>
 
             {/* Song menu item */}
-            <ListItem button component={Link} to="/song" onClick={onItemClick('Song')}>
+           <ListItem button component={Link} to="/dayAndNight" onClick={onItemClick('DayAndNight')}>
               <ListItemIcon>
                 <MusicNoteIcon />
               </ListItemIcon>
-              <ListItemText primary="Song" />
-              { title === 'Song' && 
+              <ListItemText primary="DayAndNight" />
+              { title === 'DayAndNight' && 
+                <ListItemIcon>
+                  <IconButton onClick={handleDrawerCollapsed}>
+                    <ChevronLeftIcon />
+                  </IconButton>
+                </ListItemIcon>
+              }
+            </ListItem>
+
+            {/* Song menu item */}
+            <ListItem button component={Link} to="/bonitaAppleBum" onClick={onItemClick('BonitaAppleBum')}>
+              <ListItemIcon>
+                <MusicNoteIcon />
+              </ListItemIcon>
+              <ListItemText primary="BonitaAppleBum" />
+              { title === 'BonitaAppleBum' && 
                 <ListItemIcon>
                   <IconButton onClick={handleDrawerCollapsed}>
                     <ChevronLeftIcon />
@@ -313,18 +260,16 @@ export default function Dashboard() {
               }
             </ListItem>
           </List>
+          
 
         </Drawer>
 
         {/* This is your mission control: Matches URLs above to your components */}
         <main className={classes.content}>
           <Route exact path="/" component={Home} />
-          <Route path="/charts" component={Chart} />
-          <Route path="/deposits" component={Deposits} />
-          <Route path="/orders" component={Orders} />
-          <Route path="/store" component={Store} />
-          <Route path="/about" component={About} />
-          <Route path="/song" component={Song} />
+          <Route path="/stronger" component={Stronger} />
+          <Route path="/bonitaAppleBum" component={BonitaAppleBum} />
+          <Route path="/dayAndNight" component={DayAndNight} />
         </main>
       </Router>
       
