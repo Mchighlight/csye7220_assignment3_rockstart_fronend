@@ -6,6 +6,9 @@
   "dependencies": {
     "@material-ui/core": "^4.7.1",
     "@material-ui/icons": "^4.5.1",
+    "axios": "^0.22.0",
+    "browserify-fs": "^1.0.0",
+    "fs": "0.0.1-security",
     "github-markdown-css": "4.x",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

@@ -22,6 +22,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
@@ -34,6 +35,7 @@ import Chart from "../pages/Chart/Chart";
 import Deposits from "../pages/Deposits/Deposits";
 import Orders from "../pages/Orders/Orders";
 import Store from "../pages/Store/Store";
+import Song from "../pages/Song/Song";
 
 const drawerWidth = 240;
 const history = createBrowserHistory();
@@ -295,6 +297,21 @@ export default function Dashboard() {
                 </ListItemIcon>
               }
             </ListItem>
+
+            {/* Song menu item */}
+            <ListItem button component={Link} to="/song" onClick={onItemClick('Song')}>
+              <ListItemIcon>
+                <MusicNoteIcon />
+              </ListItemIcon>
+              <ListItemText primary="Song" />
+              { title === 'Song' && 
+                <ListItemIcon>
+                  <IconButton onClick={handleDrawerCollapsed}>
+                    <ChevronLeftIcon />
+                  </IconButton>
+                </ListItemIcon>
+              }
+            </ListItem>
           </List>
 
         </Drawer>
@@ -307,6 +324,7 @@ export default function Dashboard() {
           <Route path="/orders" component={Orders} />
           <Route path="/store" component={Store} />
           <Route path="/about" component={About} />
+          <Route path="/song" component={Song} />
         </main>
       </Router>
       
