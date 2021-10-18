@@ -2,7 +2,7 @@ const axios = require('axios');
 
 function getSong(songName){
     // get data from cache
-    var songLink = 'http://localhost:5000/Music/' + songName ;
+    var songLink = 'http://172.17.0.5/:5000/Music/' + songName ;
     
     let xmlHttpReq = new XMLHttpRequest();
     xmlHttpReq.open("GET", songLink, false); 
